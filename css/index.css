@@ -1,0 +1,967 @@
+/* ----------  Hero ---------- */
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #hero {
+    /* 200px - 300px - leaving extra space for the navigation */
+    padding: clamp(12.5rem, 31.95vw, 18.75rem) 1rem 0;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  #hero .fs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  #hero .fs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    max-width: 39.375rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+
+  #hero .fs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  #hero .fs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 51.8125rem;
+    margin: 0 auto 1rem 0;
+    color: #fff;
+    position: relative;
+  }
+
+  #hero .fs-text {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 1.95vw, 1.25rem);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    /* 464px - 622px */
+    max-width: clamp(29rem, 60vw, 38.785rem);
+    margin: 0 0 2.5rem 0;
+    color: #fff;
+  }
+
+  #hero .fs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+
+  #hero .fs-button-solid:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+
+  #hero .fs-button-solid:hover:before {
+    width: 100%;
+  }
+
+  #hero .fs-picture {
+    /* 340px - 742px */
+    height: clamp(21.25rem, 68vw, 46.375rem);
+    width: auto;
+    max-width: 35em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  #hero .fs-picture img {
+    height: 100%;
+    width: auto;
+  }
+
+  #hero .fs-graphic {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+  }
+
+  #hero .fs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+
+  #hero .fs-background:before {
+    /* Overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    opacity: 0.64;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
+  }
+
+  #hero .fs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* makes the top of the image start at the top of the parent */
+    object-position: top;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #hero {
+    /* 150px - 300px */
+    padding-bottom: clamp(9.375rem, 22vw, 18.75rem);
+  }
+
+  #hero .fs-container {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  #hero .fs-content {
+    text-align: left;
+    width: 55%;
+    max-width: 39.375rem;
+    align-items: flex-start;
+  }
+
+  #hero .fs-picture {
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+  }
+}
+
+/* Large Desktop - 1600px - Prallax Effect */
+@media only screen and (min-width: 100rem) {
+  #hero .fs-background {
+    background: url("./assets/images/tuiasi2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  #hero .fs-background img {
+    display: none;
+  }
+}
+
+/* ----------  Services ---------- */
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #obiective {
+    padding: var(--sectionPadding);
+  }
+
+  #obiective .fs-container {
+    max-width: 34.375rem;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  #obiective .fs-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+  }
+
+  #obiective .fs-card-group {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 16px - 20px */
+    gap: clamp(1rem, 2.3vw, 1.25rem);
+  }
+
+  #obiective .fs-item {
+    list-style: none;
+    max-width: 21.875rem;
+    width: 100%;
+    margin: 0 auto;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition:
+      box-shadow 0.3s,
+      border-color 0.3s;
+    text-align: center;
+    grid-column: span 12;
+    grid-row: span 1;
+  }
+
+  #obiective .fs-item:hover .fs-h3,
+  #obiective .fs-item:hover .fs-link {
+    color: var(--primary);
+  }
+
+  #obiective .fs-item:hover .fs-arrow {
+    filter: initial;
+  }
+
+  #obiective .fs-picture {
+    width: 6.25rem;
+    height: auto;
+    margin: 0.5rem 0 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+
+  #obiective .fs-icon {
+    width: 4.5rem;
+    height: auto;
+  }
+
+  #obiective .fs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: bold;
+    margin: 0 0 0.75rem 0;
+    color: var(--headerColor);
+    transition: color 0.3s;
+    text-align: inherit;
+  }
+
+  #obiective .fs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    max-width: 28.125rem;
+    margin: 0;
+    margin-bottom: 1.25rem;
+    padding: 0;
+    color: var(--bodyTextColor);
+  }
+
+  #obiective .fs-link {
+    font-size: 1rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin-top: auto;
+    color: var(--headerColor);
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: color 0.3s;
+    text-align: inherit;
+  }
+
+  #obiective .fs-link:hover .fs-arrow {
+    transform: translateX(0.25rem);
+  }
+
+  #obiective .fs-arrow {
+    width: 1.25rem;
+    height: auto;
+    display: block;
+    filter: grayscale(1) brightness(0);
+    transition:
+      filter 0.3s,
+      transform 0.3s;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #obiective .fs-container {
+    max-width: 80rem;
+  }
+
+  #obiective .fs-item {
+    max-width: 29rem;
+    grid-column: span 6;
+  }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #obiective .fs-item {
+    grid-column: span 3;
+  }
+}
+
+/* ----------  Side By Side ---------- */
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+
+  #sbs1,
+  #sbs2,
+  #sbs3 {
+    padding: var(--sectionPadding);
+    /* clips grpahics from causing overflow issues */
+    overflow: hidden;
+  }
+
+  #sbs1 .fs-container,
+  #sbs2 .fs-container,
+  #sbs3 .fs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  #sbs1 .fs-content,
+  #sbs2 .fs-content,
+  #sbs3 .fs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 33.875rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+
+  #sbs1 .fs-text,
+  #sbs2 .fs-text,
+  #sbs3 .fs-text {
+    margin-bottom: 1rem;
+  }
+
+  #sbs1 .fs-text:last-of-type,
+  #sbs2 .fs-text:last-of-type,
+  #sbs3 .fs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  #sbs1 .fs-ul,
+  #sbs2 .fs-ul,
+  #sbs3 .fs-ul {
+    max-width: 39.375rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    /* clips the bullets to create the half circle */
+    overflow: hidden;
+  }
+
+  #sbs1 .fs-li,
+  #sbs2 .fs-li,
+  #sbs3 .fs-li {
+    list-style: none;
+    margin: 0 0 0.5rem 0;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.75rem;
+    position: relative;
+  }
+
+  #sbs1 .fs-li:before,
+  #sbs2 .fs-li:before,
+  #sbs3 .fs-li:before {
+    /* bullet */
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: 0.5rem;
+    background: var(--secondary);
+    display: block;
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+
+  #sbs1 .fs-button-solid,
+  #sbs2 .fs-button-solid,
+  #sbs3 .fs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+
+  #sbs1 .fs-button-solid:before,
+  #sbs2 .fs-button-solid:before,
+  #sbs3 .fs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+
+  #sbs1 .fs-button-solid:hover:before,
+  #sbs2 .fs-button-solid:hover:before,
+  #sbs3 .fs-button-solid:hover:before {
+    width: 100%;
+  }
+
+  #sbs1 .fs-image-group,
+  #sbs2 .fs-image-group,
+  #sbs3 .fs-image-group {
+    /* scales the whole group based on the view width size and stop when that vales equals .8em, resets at desktop */
+    font-size: min(2.15vw, 0.8em);
+    width: 42.375em;
+    height: 36.75em;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  #sbs1 .fs-picture,
+  #sbs2 .fs-picture,
+  #sbs3 .fs-picture {
+    position: absolute;
+  }
+
+  #sbs1 .fs-picture img,
+  #sbs2 .fs-picture img,
+  #sbs3 .fs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #sbs1 .fs-picture1,
+  #sbs2 .fs-picture1,
+  #sbs3 .fs-picture1 {
+    width: 39.375em;
+    height: 24.375em;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  #sbs1 .fs-picture2,
+  #sbs2 .fs-picture2,
+  #sbs3 .fs-picture2 {
+    width: 28.8125em;
+    height: 18.75em;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+
+  #sbs1 .fs-box,
+  #sbs2 .fs-box,
+  #sbs3 .fs-box {
+    width: 12.3125em;
+    height: 11.125em;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    bottom: 0;
+  }
+
+  #sbs1 .fs-number,
+  #sbs2 .fs-number,
+  #sbs3 .fs-number {
+    /* 20px - 39px */
+    font-size: clamp(1.25rem, 4vw, 2.4375rem);
+    text-align: center;
+    line-height: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    /* 4px - 8px */
+    margin: 0 0 clamp(0.25rem, 1vw, 0.5rem);
+    color: var(--bodyTextColorWhite);
+    display: block;
+  }
+
+  #sbs1 .fs-desc,
+  #sbs2 .fs-desc,
+  #sbs3 .fs-desc {
+    /* 12px - 16px */
+    font-size: clamp(0.75rem, 1.9vw, 1rem);
+    text-align: center;
+    line-height: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    max-width: 12ch;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    display: block;
+  }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+
+  #sbs1 .fs-container,
+  #sbs2 .fs-container,
+  #sbs3 .fs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #sbs1 .fs-image-group,
+  #sbs2 .fs-image-group,
+  #sbs3 .fs-image-group {
+    font-size: min(1.2vw, 1em);
+    flex: none;
+  }
+}
+
+/* ----------  Side By Side Reverse ---------- */
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbs2 {
+    background-color: #f7f7f7;
+  }
+
+  #sbs2 .fs-picture1 {
+    left: auto;
+    right: 0;
+  }
+
+  #sbs2 .fs-picture2 {
+    right: auto;
+    left: 0;
+  }
+
+
+
+  #sbs2 .fs-box {
+    left: auto;
+    right: 0;
+  }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #sbs2 .fs-image-group {
+    order: 2;
+  }
+}
+
+/* ----------  Logos ---------- */
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #logos {
+    padding: var(--sectionPadding);
+    background-color: #f7f7f7;
+  }
+
+  #logos .fs-container {
+    width: 100%;
+    max-width: 50rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  #logos .fs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #logos .fs-title {
+    margin: 0;
+  }
+
+  #logos .fs-logo-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  #logos .fs-logo {
+    width: 40%;
+    max-width: 7.5rem;
+    height: auto;
+    margin: 0;
+    display: block;
+  }
+
+  #logos .fs-banner {
+    width: 50%;
+    max-width: 20rem;
+    height: auto;
+    margin: 0;
+    display: block;
+    margin-top: 2rem;
+  }
+
+  #logos .fs-logo-text {
+    height: auto;
+    margin: 0;
+    display: block;
+    font-weight: bold;
+  }
+}
+
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #logos .fs-container {
+    max-width: 80rem;
+  }
+}
+
+/* ----------  Stats ---------- */
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #stats {
+      padding: var(--sectionPadding);
+      position: relative;
+      z-index: 1;
+  }
+  #stats .fs-background {
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a1a;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: -1;
+  }
+  #stats .fs-background img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.16;
+      object-fit: cover;
+  }
+  #stats .fs-card-group {
+      width: 100%;
+      max-width: 37.5rem;
+      margin: auto;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 2.5rem;
+  }
+  #stats .fs-item {
+      list-style: none;
+      min-width: auto;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  #stats .fs-picture {
+      width: clamp(3.75rem, 7.9vw, 5rem);
+      height: clamp(3.75rem, 7.9vw, 5rem);
+      margin-right: 1rem;
+      border-radius: 50%;
+      border: 1px solid #bababa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      flex: none;
+  }
+  #stats .fs-icon {
+      /* 28px - 40px */
+      width: clamp(1.75rem, 3.9vw, 2.5rem);
+      height: auto;
+  }
+  #stats .fs-flex-group {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+  }
+  #stats .fs-number {
+      font-size: var(--headerFontSize);
+      color: var(--bodyTextColorWhite);
+      font-weight: 900;
+      line-height: 1.2em;
+      margin: 0;
+      display: block;
+  }
+  #stats .fs-desc {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.4vw, 1rem);
+      line-height: 1.5em;
+      color: var(--bodyTextColorWhite);
+      display: block;
+  }
+}
+/* Tablet - 650px */
+@media only screen and (min-width: 40.625rem) {
+  #stats .fs-card-group {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 3.125rem;
+      row-gap: 3.75rem;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #stats .fs-card-group {
+      max-width: 80rem;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+  }
+}
+
+                              
+/* ----------  CTA ---------- */
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta {
+      width: 100%;
+      max-width: 80rem;
+      margin: var(--sectionPadding);
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      padding: 3.75rem clamp(1rem, 7vw, 3.75rem);
+      box-sizing: border-box;
+      border: 1px solid #484848;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+  }
+  #cta .fs-content {
+      text-align: center;
+      width: 100%;
+      max-width: 25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+  }
+
+  #cta .fs-title {
+      width: 100%;
+      font-size: 1.9375rem;
+      margin: 0;
+      color: var(--bodyTextColorWhite);
+  }
+  #cta .fs-form {
+      width: 100%;
+      max-width: 45.3125rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex: none;
+  }
+  #cta .fs-input {
+      font-size: 1rem;
+      width: 100%;
+      height: clamp(2.875rem, 5.5vw, 3.5rem);
+      margin: 0;
+      padding: 0;
+      padding-left: 1.25rem;
+      border: none;
+      /* prevents padding from adding to width and height */
+      box-sizing: border-box;
+      display: block;
+  }
+  #cta .fs-input::placeholder {
+      color: #767676;
+  }
+  #cta .fs-button-solid {
+      font-size: 1rem;
+      /* 46px - 56px */
+      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 1.5rem;
+      background-color: var(--primary);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+  }
+  #cta .fs-button-solid:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width 0.3s;
+  }
+  #cta .fs-button-solid:hover:before {
+      width: 100%;
+  }
+  #cta .fs-submit {
+      width: 100%;
+      border: none;
+      transition: color 0.3s;
+  }
+  #cta .fs-submit:before {
+      background-color: #fff;
+  }
+  #cta .fs-submit:hover {
+      cursor: pointer;
+      color: var(--primary);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cta .fs-container {
+      padding-left: 3.75rem;
+      padding-right: 3.75rem;
+  }
+  #cta .fs-content {
+      max-width: 100%;
+  }
+  #cta .fs-form {
+      flex-direction: row;
+  }
+  #cta .fs-input {
+      width: 100%;
+      max-width: 32.8125rem;
+  }
+  #cta .fs-submit {
+      width: auto;
+      min-width: 11.875rem;
+      /* prevents flexbox from squishing it */
+      flex: none;
+  }
+}
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #cta .fs-content {
+      flex-direction: row;
+  }
+  #cta .fs-form {
+      width: 60%;
+  }
+}
+
